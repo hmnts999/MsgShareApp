@@ -19,11 +19,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnSendMsgToNxtActivity.setOnClickListener {
-            val msg: String = etUserMsg.getText().toString()
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-
+            val message: String = etUserMsg.getText().toString()
             val intent = Intent(this, SecondActivity::class.java)
+
+            intent.putExtra("user_message", message)
+
             startActivity(intent)
+
+
         }
     }
 
